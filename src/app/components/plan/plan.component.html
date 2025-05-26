@@ -1,0 +1,32 @@
+<section class="plan">
+  <div class="planWrapper">
+    <h2 class="planTitle">Encontre o Plano Odontológico Ideal</h2>
+    <div class="filterWrapper">
+      <div class="filterPlan">
+        <div>
+          <input
+            type="text"
+            placeholder="Buscar plano..."
+            [(ngModel)]="filtro"
+            class="searchFilter"
+          />
+        </div>
+        <div>
+          <select [(ngModel)]="filtroPreco" class="selectFilter">
+            <option value="" disabled selected>Filtra por preço</option>
+            <option value="">Mostrar Todos</option>
+            <option value="mais-barato">Menor Preço</option>
+            <option value="mais-caro">Maior Preço</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="cardsWrapper">
+      <div class="cardPlan" *ngFor="let plan of plansFiltrados">
+        <h2 class="namePlan">{{ plan.nome }}</h2>
+        <p class="pricePlan">R$ {{ plan.valor }}</p>
+        <p>{{ plan.descricao }}</p>
+      </div>
+    </div>
+  </div>
+</section>

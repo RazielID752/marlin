@@ -1,0 +1,122 @@
+.header {
+  background-color: var(--blue-800);
+}
+/* Header Wrapper */
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.ulMenu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ulMenu .liLink:nth-child(3) {
+  padding-right: 2rem;
+}
+/* Menu Bottom Line Effect */
+.ulMenu .liLink a{
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+}
+
+.ulMenu .liLink a::after{
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  background: var(--white-color);
+  left: 0;
+  bottom: -10px;
+  transition: .3s ease-in-out;
+}
+
+.ulMenu .liLink a:hover::after{
+  width: 100%;
+  transition: .3s ease-in;
+}
+
+/* Menu Button */
+.liBtn .BtnMenu {
+  display: flex;
+  align-items: center ;
+  gap: 0.5rem;
+  border: 1px solid var(--white-color);
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.liBtn .BtnMenu:hover {
+  background-color: var(--white-color);
+  color: var(--blue-800);
+  transition: 0.3s ease-in;
+}
+
+/* icon menu */
+.menuIcon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 2;
+}
+
+.menuIcon span {
+  width: 25px;
+  height: 3px;
+  background: var(--white-color);
+  display: block;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+/* Mobile menu effect */
+.menuIcon.active span:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menuIcon.active span:nth-child(2) {
+  transform: translateY(0px) rotate(-45deg);
+}
+
+.menuIcon.active span:nth-child(3){
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* responsive menu Breakpoint */
+@media (max-width: 768px) {
+  .navHeader {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    flex-direction: column;
+    background-color: var(--blue-800);
+    width: 100%;
+  }
+
+  .navHeader.active {
+    height: 200px;
+  }
+
+  .ulMenu {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .menuIcon {
+    display: flex;
+  }
+}
