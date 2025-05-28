@@ -1,7 +1,7 @@
 .hero{
-  background-color: var(--gray-300);
+  background-color: var(--gray-200);
 }
-
+/* Envelope do hero */
 .heroWrapper{
   display: flex;
   justify-content: space-between;
@@ -11,7 +11,7 @@
   gap: 2rem;
   align-items: center;
 }
-
+/* Estilização do título */
 .heroContent h2{
   max-width: 10ch;
   font-family: inherit;
@@ -19,20 +19,20 @@
   color: var(--blue-900);
   padding-bottom: 0.5rem;
 }
-
+/* Estilização do parágrafo */
 .heroContent p{
   max-width: 40ch;
   font-family: inherit;
   font-weight: 400;
   padding-bottom: 0.5rem;
 }
-
+/* Estilização do preço */
 .heroPrice .priceSpan{
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--gray-800);
 }
-
+/* Estilização do preço e centavos */
 .heroPrice .priceValue{
   font-size: 1.875rem;
   font-weight: 700;
@@ -51,11 +51,11 @@
   font-weight: 700;
   color: var(--gray-800);
 }
-
+/* Espquadro do botão Container */
 .heroBtn{
   padding-top: 2rem;
 }
-
+/* Responsividade do mobile */
 @media(max-width: 768px){
   .heroWrapper{
     flex-direction: column;

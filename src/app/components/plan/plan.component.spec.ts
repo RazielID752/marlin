@@ -1,23 +1,42 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppComponent } from '../../app.component';
+import { PlanService } from '../../services/plan.service'; 
+import { of } from 'rxjs';
 
-import { PlanComponent } from './plan.component';
-
-describe('PlanComponent', () => {
-  let component: PlanComponent;
-  let fixture: ComponentFixture<PlanComponent>;
-
+// Componente de teste 
+describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let planServiceMock: jasmine.SpyObj<PlanService>;
+// 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [PlanComponent]
-    })
-    .compileComponents();
+    const spy = jasmine.createSpyObj('PlanService', ['getPlans']);
 
-    fixture = TestBed.createComponent(PlanComponent);
+    await TestBed.configureTestingModule({ // Configuração do módulo
+      imports: [AppComponent],
+      providers: [
+        { provide: PlanService, useValue: spy }
+      ]
+    }).compileComponents();
+
+    planServiceMock = TestBed.inject(PlanService) as jasmine.SpyObj<PlanService>;
+    planServiceMock.getPlans.and.returnValue(of([]));
+
+    fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
-  it('should create', () => {
+// Aqui começa os testes
+  it('should create the app', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`should have the 'teste-marlin' title`, () => {
+    expect(component.title).toEqual('teste-marlin');
+  });
+
+  it('should render component', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled).toBeTruthy();
   });
 });

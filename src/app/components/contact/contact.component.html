@@ -1,1 +1,62 @@
-<p>contact works!</p>
+<section class="contact">
+  <div class="contactWrapper">
+    <h2 class="titleContact">Entre em contato conosco</h2>
+    <div class="contactContainer">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="Nome"
+            formControlName="nome"
+            [class.error]="isFieldInvalid('nome')"
+          />
+          <div class="error-message" *ngIf="isFieldInvalid('nome')">
+            {{ getFieldError("nome") }}
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            placeholder="Email"
+            formControlName="email"
+            [class.error]="isFieldInvalid('email')"
+          />
+          <div class="error-message" *ngIf="isFieldInvalid('email')">
+            {{ getFieldError("email") }}
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="Telefone"
+            formControlName="telefone"
+            [class.error]="isFieldInvalid('telefone')"
+            mask="(00) 00000-0000"
+          />
+          <div class="error-message" *ngIf="isFieldInvalid('telefone')">
+            {{ getFieldError("telefone") }}
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea
+            placeholder="Mensagem"
+            formControlName="mensagem"
+            [class.error]="isFieldInvalid('mensagem')"
+          ></textarea>
+          <div class="error-message" *ngIf="isFieldInvalid('mensagem')">
+            {{ getFieldError("mensagem") }}
+          </div>
+        </div>
+        <div class="containerBtn">
+          <button
+            type="submit"
+            [disabled]="contactForm.invalid"
+            [class.disabled]="contactForm.invalid"
+          >
+            Enviar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

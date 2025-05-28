@@ -6,19 +6,25 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Colors */
+  /* Cor */
   --white-color: #fff;
 
-  /* Grays */
-  --gray-200: #f4f4f4;
+  /* Cinza */
+  --gray-200: #eeeef0;
   --gray-300: #f3f3f4;
   --gray-700: #cdcdcd;
   --gray-800: #3b3b3b;
   --gray-900: #303030;
 
-  /* Blues */
+  /* Azuis */
   --blue-900: #00376c;
   --blue-800: #005393;
+  --blue-700: #0064b0c2;
+  --blue-600: #0077d5;
+
+  /* Laranjas */
+  --orange-400: #ffb100;
+  --orange-700: #ff7e00;
 
   /* Sizes */
   --max-width: 1280px;

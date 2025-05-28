@@ -1,7 +1,12 @@
+/* Reset CSS padrão */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+/* Efeto de rolagem smooth */
+html{
+  scroll-behavior: smooth;
 }
 
 li {
@@ -15,3 +20,18 @@ a {
 img {
   max-width: 100%;
 }
+/* Estilização da barra de rolagem */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #545454;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background: #303030;
+}
+

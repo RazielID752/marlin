@@ -1,0 +1,157 @@
+.footer {
+  background-color: var(--blue-600);
+  padding: 1rem 0;
+}
+/* Estilização do wrapper */
+.footerWrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Estilização do shape */
+.shapeWrapper {
+  position: relative;
+}
+
+.shapeWrapper .shapeElement {
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+}
+/* Para o shape ficar ajustado ao tamanho da tela */
+.shapeWrapper .shapeElement svg {
+  height: 90px;
+  width: calc(100% + 0.4px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.copyContainer {
+  padding-top: 1rem;
+}
+/* Estilização da lista */
+.ulCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ulCopy li span {
+  color: var(--white-color);
+}
+
+.ulCopy li a {
+  color: var(--white-color);
+  text-decoration: underline;
+}
+.ulCopy li a:hover {
+  text-decoration: none;
+}
+
+.ulLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.ulLinks .liLink a {
+  position: relative;
+}
+/* Estilização do links para ter efeito de sublinhado */
+.ulLinks .liLink a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  background: var(--white-color);
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s ease-in-out;
+}
+
+.ulLinks .liLink a:hover::after {
+  width: 100%;
+  transition: 0.3s ease-in;
+}
+/*  */
+.ulLinks .liLink a {
+  color: var(--white-color);
+  font-weight: 600;
+}
+
+.footerNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footerNav .arrowUp a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem;
+  background: linear-gradient(
+    180deg,
+    var(--orange-400) 0%,
+    var(--orange-700) 100%
+  );
+}
+
+.footerNav .arrowUp a:hover {
+transform: scaleY(1.1) scaleX(1.1);
+}
+
+/* Estilo da seta */
+.footerNav .arrowUp span {
+  color: var(--white-color);
+}
+/* Estilização das redes sociais */
+.ulSocial {
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+/* Estilização das redes sociais */
+.ulSocial .liSocial a {
+  color: var(--blue-600);
+  padding: 4px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  background: var(--white-color);
+  border: 1px solid var(--white-color);
+  transition: ease-in-out 0.3s;
+}
+
+.ulSocial .liSocial a:hover {
+  border: 1px solid var(--white-color);
+  background: transparent;
+  color: var(--white-color);
+  transition: ease-in 0.3s;
+}
+/* Para o iconify ser responsivo */
+.liSocial a iconify-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .footerWrapper {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    max-width: 400px;
+  }
+
+  .shapeWrapper .shapeElement svg {
+    height: 40px;
+  }
+}
